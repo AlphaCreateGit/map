@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section class="map">
+      <div class="container p-0">
+        <div class="map-wrapper">
+          <div class="map-img">
+            <img src="./image/Map.svg" alt="map" />
+          </div>
+          <!-- marker  -->
+          <div class="marker dn" data-city="dn">
+            <div class="marker-content" style="--text: 'Da Nang'">3</div>
+          </div>
+          <div class="marker ha" data-city="ha">
+            <div class="marker-content" style="--text: 'Hoi An'">7</div>
+          </div>
+          <div class="marker nt" data-city="nt">
+            <div class="marker-content" style="--text: 'Nha Trang'">3</div>
+          </div>
+          <div class="marker pt" data-city="pt">
+            <div class="marker-content" style="--text: 'Phan Thiet'">1</div>
+          </div>
+          <!-- end marker -->
+          <!-- map content phan thiết -->
+          <div class="map-content pt" data-city-map="pt">
+            <div class="container h-100 p-0">
+              <div class="row h-100 g-0">
+                <div class="col-lg-8 map-img-detail h-100 col-12">
+                  <div class="map-detail">
+                    <img
+                      src="./image/map-phan-thiet.svg"
+                      alt="map"
+                      class="d-none d-md-block"
+                    />
+                    <img
+                      src="./image/map-phan-thiet-mobile.svg"
+                      alt="map"
+                      class="d-block d-md-none"
+                    />
+                    <div class="icon-close mobile">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div
+                      class="marker-detail pt active"
+                      data-marker="pt-1"
+                      data-city="pt"
+                    >
+                      <svg
+                        width="39"
+                        height="49"
+                        viewBox="0 0 39 49"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.7886 36.6982L24.5898 36.7631L24.4964 36.9502L19.0386 47.8807L13.5807 36.9502L13.4872 36.7629L13.2882 36.6981C5.8571 34.2787 0.500023 27.2869 0.500023 19.0547L0.500022 19.0539C0.484312 8.79478 8.7791 0.5 19.0224 0.5C29.2659 0.5 37.5771 8.81121 37.5771 19.0547C37.5771 27.2865 32.2043 34.2787 24.7886 36.6982ZM19.0224 13.1013C15.7453 13.1013 13.0851 15.7614 13.0851 19.0385C13.0851 22.3157 15.7453 24.9758 19.0224 24.9758C22.2995 24.9758 24.9597 22.3157 24.9597 19.0385C24.9597 15.7624 22.3166 13.1013 19.0224 13.1013Z"
+                          fill="#4A3021"
+                          stroke="white"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="data-content" data-content="pt">
+                  <div class="location active" data-content="pt-1">
+                    <div class="icon-close">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div class="img-view">
+                      <img src="./image/pt-phu-hai.png" alt="" />
+                    </div>
+                    <div class="location-content">
+                      <div class="content">
+                        <div class="content-top">
+                          <h3 class="title">
+                            Phu Hai Beach Resort & Spa Phan Thiet
+                          </h3>
+                          <p>
+                            Km8 Nguyen Dinh Chieu, Phu Hai Ward, Phan Thiet,
+                            Binh Thuan
+                          </p>
+                        </div>
+                        <div class="content-bot">
+                          <a href="/">Visit site</a>
+                          <p
+                            class="mobile-back"
+                            data-marker="pt-1"
+                            data-city="pt"
+                          >
+                            back
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end map content phan thiết -->
+          <!-- map content nha trang -->
+          <div class="map-content nt" data-city-map="nt">
+            <div class="container h-100 p-0">
+              <div class="row h-100 g-0">
+                <div class="col-lg-8 map-img-detail h-100">
+                  <div class="map-detail nt">
+                    <img
+                      src="./image/map-nha-trang.svg"
+                      alt="map"
+                      class="d-none d-md-block"
+                    />
+                    <img
+                      src="./image/map-nha-trang-mobile.svg"
+                      alt="map"
+                      class="d-block d-md-none"
+                    />
+                    <div
+                      class="marker-detail nt nt-1 active"
+                      data-marker="nt-1"
+                      data-city="nt"
+                    >
+                      <svg
+                        width="39"
+                        height="49"
+                        viewBox="0 0 39 49"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.7886 36.6982L24.5898 36.7631L24.4964 36.9502L19.0386 47.8807L13.5807 36.9502L13.4872 36.7629L13.2882 36.6981C5.8571 34.2787 0.500023 27.2869 0.500023 19.0547L0.500022 19.0539C0.484312 8.79478 8.7791 0.5 19.0224 0.5C29.2659 0.5 37.5771 8.81121 37.5771 19.0547C37.5771 27.2865 32.2043 34.2787 24.7886 36.6982ZM19.0224 13.1013C15.7453 13.1013 13.0851 15.7614 13.0851 19.0385C13.0851 22.3157 15.7453 24.9758 19.0224 24.9758C22.2995 24.9758 24.9597 22.3157 24.9597 19.0385C24.9597 15.7624 22.3166 13.1013 19.0224 13.1013Z"
+                          fill="#4A3021"
+                          stroke="white"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="marker-detail nt nt-2"
+                      data-marker="nt-2"
+                      data-city="nt"
+                    >
+                      <svg
+                        width="39"
+                        height="49"
+                        viewBox="0 0 39 49"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.7886 36.6982L24.5898 36.7631L24.4964 36.9502L19.0386 47.8807L13.5807 36.9502L13.4872 36.7629L13.2882 36.6981C5.8571 34.2787 0.500023 27.2869 0.500023 19.0547L0.500022 19.0539C0.484312 8.79478 8.7791 0.5 19.0224 0.5C29.2659 0.5 37.5771 8.81121 37.5771 19.0547C37.5771 27.2865 32.2043 34.2787 24.7886 36.6982ZM19.0224 13.1013C15.7453 13.1013 13.0851 15.7614 13.0851 19.0385C13.0851 22.3157 15.7453 24.9758 19.0224 24.9758C22.2995 24.9758 24.9597 22.3157 24.9597 19.0385C24.9597 15.7624 22.3166 13.1013 19.0224 13.1013Z"
+                          fill="#4A3021"
+                          stroke="white"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="marker-detail nt nt-3"
+                      data-marker="nt-3"
+                      data-city="nt"
+                    >
+                      <svg
+                        width="39"
+                        height="49"
+                        viewBox="0 0 39 49"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.7886 36.6982L24.5898 36.7631L24.4964 36.9502L19.0386 47.8807L13.5807 36.9502L13.4872 36.7629L13.2882 36.6981C5.8571 34.2787 0.500023 27.2869 0.500023 19.0547L0.500022 19.0539C0.484312 8.79478 8.7791 0.5 19.0224 0.5C29.2659 0.5 37.5771 8.81121 37.5771 19.0547C37.5771 27.2865 32.2043 34.2787 24.7886 36.6982ZM19.0224 13.1013C15.7453 13.1013 13.0851 15.7614 13.0851 19.0385C13.0851 22.3157 15.7453 24.9758 19.0224 24.9758C22.2995 24.9758 24.9597 22.3157 24.9597 19.0385C24.9597 15.7624 22.3166 13.1013 19.0224 13.1013Z"
+                          fill="#4A3021"
+                          stroke="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="icon-close mobile">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 data-content" data-content="nt">
+                  <div
+                    class="location nt nt-1 active"
+                    data-content="nt-1"
+                    data-city-map="nt"
+                  >
+                    <div class="icon-close">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div class="img-view">
+                      <img src="./image/nt-vesna.png" alt="" />
+                    </div>
+                    <div class="location-content">
+                      <div class="content">
+                        <div class="content-top">
+                          <h3 class="title">Vesna Hotel Nha Trang</h3>
+                          <p>
+                            100 Tran Phu, Loc Tho Ward, Nha Trang City, Khanh
+                            Hoa Province, Vietnam
+                          </p>
+                        </div>
+                        <div class="content-bot">
+                          <a href="/">Visit site</a>
+                          <p
+                            class="mobile-back"
+                            data-marker="nt-1"
+                            data-city="nt"
+                          >
+                            back
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="location nt nt-2"
+                    data-content="nt-2"
+                    data-city-map="nt"
+                  >
+                    <div class="icon-close">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div class="img-view">
+                      <img src="./image/nt-libra.png" alt="" />
+                    </div>
+                    <div class="location-content">
+                      <div class="content">
+                        <div class="content-top">
+                          <h3 class="title">
+                            Emerald Bay Hotel & Spa Nha Trang
+                          </h3>
+                          <p>
+                            100/8C Tran Phu street, Loc Tho ward, Nha Trang
+                            city, Khanh Hoa Province, Vietnam
+                          </p>
+                        </div>
+                        <div class="content-bot">
+                          <a href="/">Visit site</a>
+                          <p
+                            class="mobile-back"
+                            data-marker="nt-1"
+                            data-city="nt"
+                          >
+                            back
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="location nt nt-3"
+                    data-content="nt-3"
+                    data-city-map="nt"
+                  >
+                    <div class="icon-close">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div class="img-view">
+                      <img src="./image/nt-libra.png" alt="" />
+                    </div>
+                    <div class="location-content">
+                      <div class="content">
+                        <div class="content-top">
+                          <h3 class="title">Libra Hotel Nha Trang</h3>
+                          <p>
+                            14 Hung Vuong, Loc Tho ward, Nha Trang city, Khanh
+                            Hoa province, Vietnam
+                          </p>
+                        </div>
+                        <div class="content-bot">
+                          <a href="/">Visit site</a>
+                          <p
+                            class="mobile-back"
+                            data-marker="nt-1"
+                            data-city="nt"
+                          >
+                            back
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end map content nha trang -->
+
+          <!-- map content da nang -->
+          <div class="map-content dn" data-city-map="dn">
+            <div class="container h-100 p-0">
+              <div class="row h-100 g-0">
+                <div class="col-lg-8 map-img-detail h-100">
+                  <div class="map-detail dn">
+                    <img
+                      src="./image/map-da-nang.svg"
+                      alt="map"
+                      class="d-none d-md-block"
+                    />
+                    <img
+                      src="./image/map-da-nang-mobile.svg"
+                      alt="map"
+                      class="d-block d-md-none"
+                    />
+                    <div
+                      class="marker-detail dn dn-1 active"
+                      data-marker="dn-1"
+                      data-city="dn"
+                      data-
+                    >
+                      <svg
+                        width="39"
+                        height="49"
+                        viewBox="0 0 39 49"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.7886 36.6982L24.5898 36.7631L24.4964 36.9502L19.0386 47.8807L13.5807 36.9502L13.4872 36.7629L13.2882 36.6981C5.8571 34.2787 0.500023 27.2869 0.500023 19.0547L0.500022 19.0539C0.484312 8.79478 8.7791 0.5 19.0224 0.5C29.2659 0.5 37.5771 8.81121 37.5771 19.0547C37.5771 27.2865 32.2043 34.2787 24.7886 36.6982ZM19.0224 13.1013C15.7453 13.1013 13.0851 15.7614 13.0851 19.0385C13.0851 22.3157 15.7453 24.9758 19.0224 24.9758C22.2995 24.9758 24.9597 22.3157 24.9597 19.0385C24.9597 15.7624 22.3166 13.1013 19.0224 13.1013Z"
+                          fill="#4A3021"
+                          stroke="white"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="marker-detail dn dn-2"
+                      data-marker="dn-2"
+                      data-city="dn"
+                    >
+                      <svg
+                        width="39"
+                        height="49"
+                        viewBox="0 0 39 49"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.7886 36.6982L24.5898 36.7631L24.4964 36.9502L19.0386 47.8807L13.5807 36.9502L13.4872 36.7629L13.2882 36.6981C5.8571 34.2787 0.500023 27.2869 0.500023 19.0547L0.500022 19.0539C0.484312 8.79478 8.7791 0.5 19.0224 0.5C29.2659 0.5 37.5771 8.81121 37.5771 19.0547C37.5771 27.2865 32.2043 34.2787 24.7886 36.6982ZM19.0224 13.1013C15.7453 13.1013 13.0851 15.7614 13.0851 19.0385C13.0851 22.3157 15.7453 24.9758 19.0224 24.9758C22.2995 24.9758 24.9597 22.3157 24.9597 19.0385C24.9597 15.7624 22.3166 13.1013 19.0224 13.1013Z"
+                          fill="#4A3021"
+                          stroke="white"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="marker-detail dn dn-3"
+                      data-marker="dn-3"
+                      data-city="dn"
+                    >
+                      <svg
+                        width="39"
+                        height="49"
+                        viewBox="0 0 39 49"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.7886 36.6982L24.5898 36.7631L24.4964 36.9502L19.0386 47.8807L13.5807 36.9502L13.4872 36.7629L13.2882 36.6981C5.8571 34.2787 0.500023 27.2869 0.500023 19.0547L0.500022 19.0539C0.484312 8.79478 8.7791 0.5 19.0224 0.5C29.2659 0.5 37.5771 8.81121 37.5771 19.0547C37.5771 27.2865 32.2043 34.2787 24.7886 36.6982ZM19.0224 13.1013C15.7453 13.1013 13.0851 15.7614 13.0851 19.0385C13.0851 22.3157 15.7453 24.9758 19.0224 24.9758C22.2995 24.9758 24.9597 22.3157 24.9597 19.0385C24.9597 15.7624 22.3166 13.1013 19.0224 13.1013Z"
+                          fill="#4A3021"
+                          stroke="white"
+                        />
+                      </svg>
+                    </div>
+                    <div class="icon-close mobile">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 data-content" data-content="dn">
+                  <div
+                    class="location dn dn-1 active"
+                    data-content="dn-1"
+                    data-city-map="dn"
+                  >
+                    <div class="icon-close">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div class="img-view">
+                      <img
+                        src="https://plus.unsplash.com/premium_photo-1683134041222-fb1cb31c1203?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                      />
+                    </div>
+                    <div class="location-content">
+                      <div class="content">
+                        <div class="content-top">
+                          <h3 class="title">Yarra Ocean Suites Danang</h3>
+                          <p>
+                            304 Vo Nguyen Giap street, My An ward, Ngu Hanh Son
+                            district, Da Nang city
+                          </p>
+                        </div>
+                        <div class="content-bot">
+                          <a href="/">Visit site</a>
+                          <p
+                            class="mobile-back"
+                            data-marker="dn-1"
+                            data-city="dn"
+                          >
+                            back
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="location dn dn-2"
+                    data-content="dn-2"
+                    data-city-map="dn"
+                  >
+                    <div class="icon-close">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div class="img-view">
+                      <img
+                        src="https://images.unsplash.com/photo-1505533321630-975218a5f66f?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                      />
+                    </div>
+                    <div class="location-content">
+                      <div class="content">
+                        <div class="content-top">
+                          <h3 class="title">Holiday Beach Hotel Danang</h3>
+                          <p>
+                            300 Vo Nguyen Giap, My An North, Ngu Hanh Son
+                            District, Da Nang City, Vietnam
+                          </p>
+                        </div>
+                        <div class="content-bot">
+                          <a href="/">Visit site</a>
+                          <p
+                            class="mobile-back"
+                            data-marker="dn-2"
+                            data-city="dn"
+                          >
+                            back
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="location dn dn-3"
+                    data-content="dn-3"
+                    data-city-map="dn"
+                  >
+                    <div class="icon-close">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div class="img-view">
+                      <img
+                        src="https://plus.unsplash.com/premium_photo-1683134041222-fb1cb31c1203?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                      />
+                    </div>
+                    <div class="location-content">
+                      <div class="content">
+                        <div class="content-top">
+                          <h3 class="title">Serene Beach Hotel Danang</h3>
+                          <p>
+                            274 Vo Nguyen Giap, My An Ward, Ngu Hanh Son
+                            District, Da Nang City
+                          </p>
+                        </div>
+                        <div class="content-bot">
+                          <a href="/">Visit site</a>
+                          <p
+                            class="mobile-back"
+                            data-marker="dn-3"
+                            data-city="dn"
+                          >
+                            back
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end map content da nang -->
+          <!-- map content hoi an -->
+          <div class="map-content ha" data-city-map="ha">
+            <div class="container h-100 p-0">
+              <div class="row h-100 g-0">
+                <div class="col-lg-8 map-img-detail h-100">
+                  <div class="map-detail ha">
+                    <img
+                      src="./image/map-hoi-an.svg"
+                      alt="map"
+                      class="d-none d-md-block"
+                    />
+                    <img
+                      src="./image/map-hoi-an-mobile.svg"
+                      alt="map"
+                      class="d-block d-md-none"
+                    />
+                    <div class="icon-close mobile">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div
+                      class="marker-detail ha ha-1 active"
+                      data-marker="ha-1"
+                      data-city="ha"
+                    >
+                      <svg
+                        width="39"
+                        height="49"
+                        viewBox="0 0 39 49"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.7886 36.6982L24.5898 36.7631L24.4964 36.9502L19.0386 47.8807L13.5807 36.9502L13.4872 36.7629L13.2882 36.6981C5.8571 34.2787 0.500023 27.2869 0.500023 19.0547L0.500022 19.0539C0.484312 8.79478 8.7791 0.5 19.0224 0.5C29.2659 0.5 37.5771 8.81121 37.5771 19.0547C37.5771 27.2865 32.2043 34.2787 24.7886 36.6982ZM19.0224 13.1013C15.7453 13.1013 13.0851 15.7614 13.0851 19.0385C13.0851 22.3157 15.7453 24.9758 19.0224 24.9758C22.2995 24.9758 24.9597 22.3157 24.9597 19.0385C24.9597 15.7624 22.3166 13.1013 19.0224 13.1013Z"
+                          fill="#4A3021"
+                          stroke="white"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="marker-detail ha ha-2"
+                      data-marker="ha-2"
+                      data-city="ha"
+                    >
+                      <svg
+                        width="39"
+                        height="49"
+                        viewBox="0 0 39 49"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.7886 36.6982L24.5898 36.7631L24.4964 36.9502L19.0386 47.8807L13.5807 36.9502L13.4872 36.7629L13.2882 36.6981C5.8571 34.2787 0.500023 27.2869 0.500023 19.0547L0.500022 19.0539C0.484312 8.79478 8.7791 0.5 19.0224 0.5C29.2659 0.5 37.5771 8.81121 37.5771 19.0547C37.5771 27.2865 32.2043 34.2787 24.7886 36.6982ZM19.0224 13.1013C15.7453 13.1013 13.0851 15.7614 13.0851 19.0385C13.0851 22.3157 15.7453 24.9758 19.0224 24.9758C22.2995 24.9758 24.9597 22.3157 24.9597 19.0385C24.9597 15.7624 22.3166 13.1013 19.0224 13.1013Z"
+                          fill="#4A3021"
+                          stroke="white"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="marker-detail ha ha-3"
+                      data-marker="ha-3"
+                      data-city="ha"
+                    >
+                      <svg
+                        width="39"
+                        height="49"
+                        viewBox="0 0 39 49"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.7886 36.6982L24.5898 36.7631L24.4964 36.9502L19.0386 47.8807L13.5807 36.9502L13.4872 36.7629L13.2882 36.6981C5.8571 34.2787 0.500023 27.2869 0.500023 19.0547L0.500022 19.0539C0.484312 8.79478 8.7791 0.5 19.0224 0.5C29.2659 0.5 37.5771 8.81121 37.5771 19.0547C37.5771 27.2865 32.2043 34.2787 24.7886 36.6982ZM19.0224 13.1013C15.7453 13.1013 13.0851 15.7614 13.0851 19.0385C13.0851 22.3157 15.7453 24.9758 19.0224 24.9758C22.2995 24.9758 24.9597 22.3157 24.9597 19.0385C24.9597 15.7624 22.3166 13.1013 19.0224 13.1013Z"
+                          fill="#4A3021"
+                          stroke="white"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="marker-detail ha ha-4"
+                      data-marker="ha-4"
+                      data-city="ha"
+                    >
+                      <svg
+                        width="39"
+                        height="49"
+                        viewBox="0 0 39 49"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.7886 36.6982L24.5898 36.7631L24.4964 36.9502L19.0386 47.8807L13.5807 36.9502L13.4872 36.7629L13.2882 36.6981C5.8571 34.2787 0.500023 27.2869 0.500023 19.0547L0.500022 19.0539C0.484312 8.79478 8.7791 0.5 19.0224 0.5C29.2659 0.5 37.5771 8.81121 37.5771 19.0547C37.5771 27.2865 32.2043 34.2787 24.7886 36.6982ZM19.0224 13.1013C15.7453 13.1013 13.0851 15.7614 13.0851 19.0385C13.0851 22.3157 15.7453 24.9758 19.0224 24.9758C22.2995 24.9758 24.9597 22.3157 24.9597 19.0385C24.9597 15.7624 22.3166 13.1013 19.0224 13.1013Z"
+                          fill="#4A3021"
+                          stroke="white"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="marker-detail ha ha-5"
+                      data-marker="ha-5"
+                      data-city="ha"
+                    >
+                      <svg
+                        width="39"
+                        height="49"
+                        viewBox="0 0 39 49"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.7886 36.6982L24.5898 36.7631L24.4964 36.9502L19.0386 47.8807L13.5807 36.9502L13.4872 36.7629L13.2882 36.6981C5.8571 34.2787 0.500023 27.2869 0.500023 19.0547L0.500022 19.0539C0.484312 8.79478 8.7791 0.5 19.0224 0.5C29.2659 0.5 37.5771 8.81121 37.5771 19.0547C37.5771 27.2865 32.2043 34.2787 24.7886 36.6982ZM19.0224 13.1013C15.7453 13.1013 13.0851 15.7614 13.0851 19.0385C13.0851 22.3157 15.7453 24.9758 19.0224 24.9758C22.2995 24.9758 24.9597 22.3157 24.9597 19.0385C24.9597 15.7624 22.3166 13.1013 19.0224 13.1013Z"
+                          fill="#4A3021"
+                          stroke="white"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="marker-detail ha ha-6"
+                      data-marker="ha-6"
+                      data-city="ha"
+                    >
+                      <svg
+                        width="39"
+                        height="49"
+                        viewBox="0 0 39 49"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.7886 36.6982L24.5898 36.7631L24.4964 36.9502L19.0386 47.8807L13.5807 36.9502L13.4872 36.7629L13.2882 36.6981C5.8571 34.2787 0.500023 27.2869 0.500023 19.0547L0.500022 19.0539C0.484312 8.79478 8.7791 0.5 19.0224 0.5C29.2659 0.5 37.5771 8.81121 37.5771 19.0547C37.5771 27.2865 32.2043 34.2787 24.7886 36.6982ZM19.0224 13.1013C15.7453 13.1013 13.0851 15.7614 13.0851 19.0385C13.0851 22.3157 15.7453 24.9758 19.0224 24.9758C22.2995 24.9758 24.9597 22.3157 24.9597 19.0385C24.9597 15.7624 22.3166 13.1013 19.0224 13.1013Z"
+                          fill="#4A3021"
+                          stroke="white"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="marker-detail ha ha-7"
+                      data-marker="ha-7"
+                      data-city="ha"
+                    >
+                      <svg
+                        width="39"
+                        height="49"
+                        viewBox="0 0 39 49"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24.7886 36.6982L24.5898 36.7631L24.4964 36.9502L19.0386 47.8807L13.5807 36.9502L13.4872 36.7629L13.2882 36.6981C5.8571 34.2787 0.500023 27.2869 0.500023 19.0547L0.500022 19.0539C0.484312 8.79478 8.7791 0.5 19.0224 0.5C29.2659 0.5 37.5771 8.81121 37.5771 19.0547C37.5771 27.2865 32.2043 34.2787 24.7886 36.6982ZM19.0224 13.1013C15.7453 13.1013 13.0851 15.7614 13.0851 19.0385C13.0851 22.3157 15.7453 24.9758 19.0224 24.9758C22.2995 24.9758 24.9597 22.3157 24.9597 19.0385C24.9597 15.7624 22.3166 13.1013 19.0224 13.1013Z"
+                          fill="#4A3021"
+                          stroke="white"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 data-content" data-content="ha">
+                  <div
+                    class="location ha ha-1 active"
+                    data-content="ha-1"
+                    data-city-map="ha"
+                  >
+                    <div class="icon-close">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div class="img-view">
+                      <img
+                        src="https://plus.unsplash.com/premium_photo-1683134041222-fb1cb31c1203?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                      />
+                    </div>
+                    <div class="location-content">
+                      <div class="content">
+                        <div class="content-top">
+                          <h3 class="title">Bel Marina Hoi An Resort</h3>
+                          <p>
+                            127 Nguyen Phuc Tan, Cam Pho Ward, Hoi An City,
+                            Quang Nam Province, Vietnam
+                          </p>
+                        </div>
+                        <div class="content-bot">
+                          <a href="/">Visit site</a>
+                          <p
+                            class="mobile-back"
+                            data-marker="ha-1"
+                            data-city="ha"
+                          >
+                            back
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="location ha ha-2"
+                    data-content="ha-2"
+                    data-city-map="ha"
+                  >
+                    <div class="icon-close">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div class="img-view">
+                      <img
+                        src="https://images.unsplash.com/photo-1505533321630-975218a5f66f?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                      />
+                    </div>
+                    <div class="location-content">
+                      <div class="content">
+                        <div class="content-top">
+                          <h3 class="title">Emerald Hoi An Riverside Resort</h3>
+                          <p>
+                            127 Ngo Quyen, Minh An, Hoi An City, Quang Nam
+                            Province, Vietnam
+                          </p>
+                        </div>
+                        <div class="content-bot">
+                          <a href="/">Visit site</a>
+                          <p
+                            class="mobile-back"
+                            data-marker="ha-2"
+                            data-city="ha"
+                          >
+                            back
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="location ha ha-3"
+                    data-content="ha-3"
+                    data-city-map="ha"
+                  >
+                    <div class="icon-close">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div class="img-view">
+                      <img
+                        src="https://images.unsplash.com/photo-1505533321630-975218a5f66f?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                      />
+                    </div>
+                    <div class="location-content">
+                      <div class="content">
+                        <div class="content-top">
+                          <h3 class="title">The Signature Hoi An</h3>
+                          <p>
+                            21 La Hoi, Minh An, Hoi An City, Quang Nam Province,
+                            Vietnam
+                          </p>
+                        </div>
+                        <div class="content-bot">
+                          <a href="/">Visit site</a>
+                          <p
+                            class="mobile-back"
+                            data-marker="ha-3"
+                            data-city="ha"
+                          >
+                            back
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="location ha ha-4"
+                    data-content="ha-4"
+                    data-city-map="ha"
+                  >
+                    <div class="icon-close">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div class="img-view">
+                      <img
+                        src="https://images.unsplash.com/photo-1505533321630-975218a5f66f?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                      />
+                    </div>
+                    <div class="location-content">
+                      <div class="content">
+                        <div class="content-top">
+                          <h3 class="title">Sen Retreat Hoi An</h3>
+                          <p>
+                            490 Cua Dai, Cam Chau, Hoi An City, Quang Nam
+                            Province, Vietnam
+                          </p>
+                        </div>
+                        <div class="content-bot">
+                          <a href="/">Visit site</a>
+                          <p
+                            class="mobile-back"
+                            data-marker="ha-4"
+                            data-city="ha"
+                          >
+                            back
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="location ha ha-5"
+                    data-content="ha-5"
+                    data-city-map="ha"
+                  >
+                    <div class="icon-close">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div class="img-view">
+                      <img
+                        src="https://images.unsplash.com/photo-1505533321630-975218a5f66f?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                      />
+                    </div>
+                    <div class="location-content">
+                      <div class="content">
+                        <div class="content-top">
+                          <h3 class="title">
+                            Shining Riverside Hoi An Boutique And Spa
+                          </h3>
+                          <p>
+                            191 Tran Nhan Tong, Hoi An City, Quang Nam Province,
+                            Vietnam
+                          </p>
+                        </div>
+                        <div class="content-bot">
+                          <a href="/">Visit site</a>
+                          <p
+                            class="mobile-back"
+                            data-marker="ha-5"
+                            data-city="ha"
+                          >
+                            back
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="location ha ha-6"
+                    data-content="ha-6"
+                    data-city-map="ha"
+                  >
+                    <div class="icon-close">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div class="img-view">
+                      <img
+                        src="https://images.unsplash.com/photo-1505533321630-975218a5f66f?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                      />
+                    </div>
+                    <div class="location-content">
+                      <div class="content">
+                        <div class="content-top">
+                          <h3 class="title">Oriental Boutique Hoi An</h3>
+                          <p>
+                            330 Cua Dai, Cam Chau, Hoi An City, Quang Nam
+                            Province, Vietnam
+                          </p>
+                        </div>
+                        <div class="content-bot">
+                          <a href="/">Visit site</a>
+                          <p
+                            class="mobile-back"
+                            data-marker="ha-6"
+                            data-city="ha"
+                          >
+                            back
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="location ha ha-7"
+                    data-content="ha-7"
+                    data-city-map="ha"
+                  >
+                    <div class="icon-close">
+                      <img src="./image/icon-close.svg" alt="" />
+                    </div>
+                    <div class="img-view">
+                      <img
+                        src="https://images.unsplash.com/photo-1505533321630-975218a5f66f?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt=""
+                      />
+                    </div>
+                    <div class="location-content">
+                      <div class="content">
+                        <div class="content-top">
+                          <h3 class="title">Legacy Hoi An Resort</h3>
+                          <p>
+                            Cam Thanh, Hoi An City, Quang Nam Province, Vietnam
+                          </p>
+                        </div>
+                        <div class="content-bot">
+                          <a href="/">Visit site</a>
+                          <p
+                            class="mobile-back"
+                            data-marker="ha-7"
+                            data-city="ha"
+                          >
+                            back
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end map content hoi an -->
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

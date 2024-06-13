@@ -71,6 +71,10 @@ body {
   position: relative;
   height: 670px;
 }
+.map-wrapper .marker-wrapper {
+  position: absolute;
+  inset: 0;
+}
 
 .map-wrapper .marker {
   position: absolute;
@@ -105,7 +109,7 @@ body {
   width: 213px;
   background-color: #4a3021;
   top: 50%;
-  right: -229px;
+  left: 28px;
   z-index: -1;
 }
 
@@ -132,7 +136,6 @@ body {
 
 .map-wrapper .marker.ha .marker-content::before {
   width: 182px;
-  right: -199px;
 }
 
 .map-wrapper .marker.nt .marker-content::before {
@@ -429,7 +432,7 @@ body {
     justify-content: center;
     align-items: center;
     border: 1px solid #a59890;
-    font-size: 14px;
+    font-size: 10px;
     color: #4a3021;
   }
   .map-wrapper .icon-close {
@@ -487,13 +490,13 @@ body {
   }
 
   .map-wrapper .map-content.ha .marker-detail.ha-1 {
-    transform: translate(-75px, 22px);
-    z-index: 2;
+    transform: translate(-90px, 15px);
+    z-index: 3;
   }
 
   .map-wrapper .map-content.ha .marker-detail.ha-2 {
-    transform: translate(-90px, 15px);
-    z-index: 3;
+    transform: translate(-75px, 22px);
+    z-index: 2;
   }
 
   .map-wrapper .map-content.ha .marker-detail.ha-3 {

@@ -187,20 +187,28 @@ body {
   left: 50%;
   transform: translate(5px, -7px);
 }
-
-.map-wrapper .marker.ha .marker-content::before {
+.map-wrapper .marker.ha .marker-content::after {
   width: 198px;
 }
 
-.map-wrapper .marker.nt .marker-content::before {
+.map-wrapper .marker.ha:hover .marker-content::before {
+  width: 198px;
+}
+.map-wrapper .marker .marker-content::after {
+  width: 222px;
+}
+.map-wrapper .marker.dn .marker-content::after {
+  width: 213px;
+}
+.map-wrapper .marker.nt:hover .marker-content::before {
   width: 182px;
 }
 
-.map-wrapper .marker.pt .marker-content::before {
+.map-wrapper .marker.pt:hover .marker-content::before {
   width: 222px;
 }
 
-.map-wrapper .marker.ha .marker-content::after {
+.map-wrapper .marker.ha:hover .marker-content::after {
   width: 198px;
 }
 
@@ -637,5 +645,11 @@ body {
   }
   .map-wrapper .map-content.pt .marker-detail {
     transform: translate(-82px, -32px);
+  }
+  /* .map-wrapper .marker.ha .marker-content::after {
+    width: 107px;
+  } */
+  .map-wrapper .marker.ha:hover .marker-content::after {
+    width: 107px;
   }
 }

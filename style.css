@@ -264,13 +264,19 @@ body {
   left: 0;
   transform: translateX(-100%);
   z-index: 99;
-  background-image: url("./image/icon-close.svg");
-  width: 65px;
-  height: 65px;
+  transition: all 0.3s;
 }
 .map-wrapper .icon-close:hover {
-  background-image: url("./image/icon-close-hover.svg");
   cursor: pointer;
+}
+.map-wrapper .icon-close svg > * {
+  transition: all 0.3s;
+}
+.map-wrapper .icon-close:hover svg path {
+  fill: #fff;
+}
+.map-wrapper .icon-close:hover svg rect {
+  fill: #d9a952;
 }
 
 .map-wrapper .icon-close.mobile {

@@ -515,30 +515,30 @@ body {
   .map-wrapper .marker .marker-content::after {
     right: -145px;
   }
-  .map-wrapper .marker.ha .marker-content::before {
+  /* .map-wrapper .marker.ha .marker-content::before {
     width: 100px;
     right: -135px;
-  }
+  } */
   .map-wrapper .marker.ha .marker-content::after {
     right: -115px;
   }
   .map-wrapper .marker.nt {
     transform: translate(45px, -50%);
   }
-  .map-wrapper .marker.nt .marker-content::before {
+  /* .map-wrapper .marker.nt .marker-content::before {
     width: 80px;
     right: -130px;
-  }
+  } */
   .map-wrapper .marker.nt .marker-content::after {
     width: 97px;
   }
   .map-wrapper .marker.pt {
     transform: translate(20px, -30px);
   }
-  .map-wrapper .marker.pt .marker-content::before {
+  /* .map-wrapper .marker.pt .marker-content::before {
     width: 105px;
     right: -159px;
-  }
+  } */
   .map-wrapper .marker.pt .marker-content::after {
     width: 122px;
   }

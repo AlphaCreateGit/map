@@ -55,6 +55,9 @@ body {
 .map .map-img.zoom img {
   transform: scale(1.3);
 }
+.map .map-img-detail {
+  width: calc(100% - 370px) !important;
+}
 
 .map .map-img-detail img {
   width: 100%;
@@ -78,6 +81,17 @@ body {
 
 .map-wrapper .marker {
   position: absolute;
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transition: all 1.5s ease;
+  transition-delay: 0.2s;
+  z-index: 111;
+}
+.map-wrapper .marker .marker-content {
+  display: flex;
+}
+.map-wrapper .marker .number-marker {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -85,35 +99,69 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 14px;
   color: #fff;
   box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  visibility: visible;
-  transition: all 1.5s ease;
-  transition-delay: 0.2s;
-  z-index: 111;
+}
+.map-wrapper .marker .name-city {
+  color: #4a3021;
+}
+.map-wrapper .marker:hover .name-city {
+  color: #d9a952;
+  transition-delay: 0.5s;
+}
+.map-wrapper .marker .name-city {
+  transform: translateY(-5px);
 }
 .map-wrapper .marker.hidden {
   opacity: 0;
   visibility: hidden;
 }
-
+.map-wrapper .marker.dn .marker-content {
+  width: 241px;
+}
+.map-wrapper .marker.ha .marker-content {
+  width: 225px;
+}
+.map-wrapper .marker.pt .marker-content {
+  width: 250px;
+}
+.map-wrapper .marker.nt .marker-content {
+  width: 210px;
+}
 .map-wrapper .marker .marker-content {
   position: relative;
   font-size: 14px;
+  display: flex;
+  justify-content: space-between;
 }
-
+.map-wrapper .marker.nt .marker-content::after {
+  width: 182px;
+}
 .map-wrapper .marker .marker-content::before {
   position: absolute;
   content: "";
+  height: 1px;
+  width: 0px;
+  background-color: #4a3021;
+  top: 50%;
+  left: 28px;
+  z-index: -1;
+  transition: all 0.5s ease-in-out;
+}
+
+.map-wrapper .marker .marker-content::after {
+  content: "";
+  position: absolute;
   height: 1px;
   width: 213px;
   background-color: #4a3021;
   top: 50%;
   left: 28px;
-  z-index: -1;
-  transition: all 0.2s ease;
-  /* transform: scaleX(0); */
+  z-index: -2;
+}
+.map-wrapper .marker:hover .marker-content::before {
+  width: 213px;
 }
 .map-wrapper .marker:hover {
   cursor: pointer;
@@ -128,26 +176,16 @@ body {
   color: #d9a952;
 }
 
-.map-wrapper .marker .marker-content::after {
-  position: absolute;
-  content: var(--text);
-  width: max-content;
-  color: #4a3021;
-  right: -230px;
-  top: -15px;
-  transition: all 0.3s ease-in-out;
-}
-
 .map-wrapper .marker.dn {
   top: 50%;
   left: 50%;
-  transform: translate(-10px, -3px);
+  transform: translate(-10px, -7px);
 }
 
 .map-wrapper .marker.ha {
   top: 56%;
   left: 50%;
-  transform: translate(5px, -5px);
+  transform: translate(5px, -7px);
 }
 
 .map-wrapper .marker.ha .marker-content::before {
@@ -155,36 +193,21 @@ body {
 }
 
 .map-wrapper .marker.nt .marker-content::before {
-  width: 173px;
-  right: -175px;
+  width: 182px;
 }
 
 .map-wrapper .marker.pt .marker-content::before {
-  width: 223px;
-  right: -215px;
+  width: 222px;
 }
 
 .map-wrapper .marker.ha .marker-content::after {
-  position: absolute;
-  content: var(--text);
-  width: max-content;
-  color: #4a3021;
-  right: -215px;
-  top: -15px;
-}
-
-.map-wrapper .marker.nt .marker-content::after {
-  right: -192px;
-}
-
-.map-wrapper .marker.pt .marker-content::after {
-  right: -242px;
+  width: 198px;
 }
 
 .map-wrapper .marker.nt {
   top: 67%;
   left: 50%;
-  transform: translate(30px, -50%);
+  transform: translate(22px, -25px);
 }
 
 .map-wrapper .marker.pt {
@@ -236,7 +259,6 @@ body {
   background-image: url("./image/icon-close.svg");
   width: 65px;
   height: 65px;
-  transition: all 0.5s ease-in-out;
 }
 .map-wrapper .icon-close:hover {
   background-image: url("./image/icon-close-hover.svg");
@@ -303,6 +325,7 @@ body {
 .map-wrapper .location .location-content .content .content-bot a:hover {
   color: #fff;
   background-color: #4a3021;
+  border: 1px solid #4a3021;
 }
 
 .map-wrapper .map-detail {
@@ -319,6 +342,9 @@ body {
   left: 50%;
   transform: translate(-135px, -40px);
 }
+.map-wrapper .marker-detail.pt {
+  transform: translate(-124px, -59px);
+}
 .map-wrapper .marker-detail:hover {
   cursor: pointer;
 }
@@ -326,40 +352,43 @@ body {
 .map-wrapper .marker-detail svg path {
   transition: all 0.4s;
 }
+.map-wrapper .marker-detail:hover svg path {
+  fill: #d9a952;
+}
 
 .map-wrapper .marker-detail.active svg path {
   fill: #d9a952;
 }
 /* css marker map detail nha trang */
 .map-wrapper .map-content.nt .marker-detail.nt-1 {
-  transform: translate(83px, 7px);
+  transform: translate(45px, 7px);
   z-index: 2;
 }
 
 .map-wrapper .map-content.nt .marker-detail.nt-2 {
-  transform: translate(65px, -5px);
+  transform: translate(25px, -9px);
   z-index: 1;
 }
 
 .map-wrapper .map-content.nt .marker-detail.nt-3 {
-  transform: translate(60px, -70px);
+  transform: translate(20px, -70px);
   z-index: 1;
 }
 /* end css marker map detai nha trang */
 
 /* css marker detail map da nang */
 .map-wrapper .map-content.dn .marker-detail.dn-1 {
-  transform: translate(175px, 15px);
+  transform: translate(165px, 15px);
   z-index: 3;
 }
 
 .map-wrapper .map-content.dn .marker-detail.dn-2 {
-  transform: translate(158px, -28px);
+  transform: translate(147px, -26px);
   z-index: 2;
 }
 
 .map-wrapper .map-content.dn .marker-detail.dn-3 {
-  transform: translate(175px, -40px);
+  transform: translate(164px, -40px);
   z-index: 1;
 }
 /* end css marker detail map da nang */
@@ -471,10 +500,10 @@ body {
     position: relative;
     height: 570px;
   }
-  .map-wrapper .marker .marker-content::before {
+  /* .map-wrapper .marker .marker-content::before {
     width: 125px;
     right: -165px;
-  }
+  } */
   .map-wrapper .marker .marker-content::after {
     right: -145px;
   }
@@ -493,7 +522,7 @@ body {
     right: -130px;
   }
   .map-wrapper .marker.nt .marker-content::after {
-    right: -100px;
+    width: 97px;
   }
   .map-wrapper .marker.pt {
     transform: translate(20px, -30px);
@@ -503,19 +532,19 @@ body {
     right: -159px;
   }
   .map-wrapper .marker.pt .marker-content::after {
-    right: -122px;
+    width: 122px;
   }
 
   .map-wrapper .map-content.dn .marker-detail.dn-1 {
-    transform: translate(65px, 15px);
+    transform: translate(63px, 20px);
   }
 
   .map-wrapper .map-content.dn .marker-detail.dn-2 {
-    transform: translate(60px, -25px);
+    transform: translate(50px, -20px);
   }
 
   .map-wrapper .map-content.dn .marker-detail.dn-3 {
-    transform: translate(65px, -40px);
+    transform: translate(53px, -40px);
   }
 
   .map-wrapper .map-content.ha .marker-detail.ha-1 {
@@ -533,11 +562,11 @@ body {
     z-index: 1;
   }
   .map-wrapper .map-content.ha .marker-detail.ha-4 {
-    transform: translate(50px, -35px);
+    transform: translate(44px, -40px);
     z-index: 1;
   }
   .map-wrapper .map-content.ha .marker-detail.ha-5 {
-    transform: translate(85px, 0px);
+    transform: translate(75px, -5px);
     z-index: 1;
   }
   .map-wrapper .map-content.ha .marker-detail.ha-6 {
@@ -568,9 +597,45 @@ body {
     z-index: 1;
   }
   .map-wrapper .marker.dn {
-    transform: translate(0px, -50%);
+    transform: translate(7px, -10px);
   }
   .map-wrapper .marker.ha {
-    transform: translate(25px, -45%);
+    transform: translate(35px, -30%);
+  }
+  .map .map-img-detail {
+    width: 100% !important;
+  }
+  .map-wrapper .marker.dn .marker-content::after {
+    width: 135px;
+  }
+  .map-wrapper .marker.dn .marker-content {
+    width: 163px;
+  }
+  .map-wrapper .marker.ha .marker-content {
+    width: 135px;
+  }
+  .map-wrapper .marker.ha .marker-content::after {
+    width: 107px;
+  }
+  .map-wrapper .marker.nt .marker-content {
+    width: 126px;
+  }
+  .map-wrapper .marker.pt .marker-content {
+    width: 150px;
+  }
+  .map-wrapper .marker.dn:hover .marker-content::before {
+    width: 135px;
+  }
+  .map-wrapper .marker.ha:hover .marker-content::before {
+    width: 107px;
+  }
+  .map-wrapper .marker.nt:hover .marker-content::before {
+    width: 97px;
+  }
+  .map-wrapper .marker.pt:hover .marker-content::before {
+    width: 123px;
+  }
+  .map-wrapper .map-content.pt .marker-detail {
+    transform: translate(-82px, -32px);
   }
 }

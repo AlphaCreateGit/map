@@ -44,7 +44,7 @@ body {
 }
 
 .map {
-  width: 100%;
+  /* width: 100%; */
   max-width: 1200px;
   overflow: hidden;
 }
@@ -230,6 +230,7 @@ body {
   flex-direction: column;
   position: absolute;
   z-index: 99;
+  width: 100%;
 }
 
 .map-wrapper .location .location-content {

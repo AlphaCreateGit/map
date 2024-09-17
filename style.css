@@ -458,10 +458,6 @@ body {
   transition-delay: 0.3s;
 }
 
-/* .map-wrapper .location.show {
-  transition-delay: 0.5s;
-} */
-
 .map-wrapper .data-content {
   position: absolute;
   right: 0;
@@ -518,17 +514,11 @@ body {
     position: relative;
     height: 570px;
   }
-  /* .map-wrapper .marker .marker-content::before {
-    width: 125px;
-    right: -165px;
-  } */
+
   .map-wrapper .marker .marker-content::after {
     right: -145px;
   }
-  /* .map-wrapper .marker.ha .marker-content::before {
-    width: 100px;
-    right: -135px;
-  } */
+
   .map-wrapper .marker.ha .marker-content::after {
     right: -115px;
   }
@@ -545,10 +535,6 @@ body {
   .map-wrapper .marker.pt {
     transform: translate(20px, -30px);
   }
-  /* .map-wrapper .marker.pt .marker-content::before {
-    width: 105px;
-    right: -159px;
-  } */
   .map-wrapper .marker.pt .marker-content::after {
     width: 122px;
   }
@@ -656,9 +642,7 @@ body {
   .map-wrapper .map-content.pt .marker-detail {
     transform: translate(-82px, -32px);
   }
-  /* .map-wrapper .marker.ha .marker-content::after {
-    width: 107px;
-  } */
+
   .map-wrapper .marker.ha:hover .marker-content::after {
     width: 107px;
   }
